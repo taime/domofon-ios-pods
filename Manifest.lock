@@ -1,0 +1,91 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - CocoaLumberjack (3.5.3):
+    - CocoaLumberjack/Core (= 3.5.3)
+  - CocoaLumberjack/Core (3.5.3)
+  - ijkplayerssl (1.1.4)
+  - IQKeyboardManager (6.2.1)
+  - LGSideMenuController (2.1.1)
+  - Reachability (3.2)
+  - ReactiveObjC (3.0.0)
+  - SAMKeychain (1.5.3)
+  - SDWebImage (4.4.6):
+    - SDWebImage/Core (= 4.4.6)
+  - SDWebImage/Core (4.4.6)
+  - SVProgressHUD (2.2.5)
+  - Vialer-pjsip-iOS (3.4.1)
+  - VialerSIPLib (3.5.4):
+    - CocoaLumberjack
+    - Reachability
+    - Vialer-pjsip-iOS
+  - YYModel (1.0.4)
+
+DEPENDENCIES:
+  - AFNetworking
+  - ijkplayerssl (~> 1.1.3)
+  - IQKeyboardManager
+  - LGSideMenuController
+  - ReactiveObjC
+  - SAMKeychain
+  - SDWebImage
+  - SVProgressHUD
+  - VialerSIPLib
+  - YYModel (from `https://github.com/ilyainyushin/YYModel`, branch `master`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - CocoaLumberjack
+    - ijkplayerssl
+    - IQKeyboardManager
+    - LGSideMenuController
+    - Reachability
+    - ReactiveObjC
+    - SAMKeychain
+    - SDWebImage
+    - SVProgressHUD
+    - Vialer-pjsip-iOS
+    - VialerSIPLib
+
+EXTERNAL SOURCES:
+  YYModel:
+    :branch: master
+    :git: https://github.com/ilyainyushin/YYModel
+
+CHECKOUT OPTIONS:
+  YYModel:
+    :commit: 2b3e965d526eacf31c18121b1e53d0da42239635
+    :git: https://github.com/ilyainyushin/YYModel
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  CocoaLumberjack: 2f44e60eb91c176d471fdba43b9e3eae6a721947
+  ijkplayerssl: 595307d7d3ca305450d22af27cd638c659fa988d
+  IQKeyboardManager: 964638372b4a61892cc74fdfa6fd26de8c9464a2
+  LGSideMenuController: ae40c80983ab8b8801c7cef0a6804d43aaa72d45
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
+  SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
+  SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  Vialer-pjsip-iOS: 9b8fc1226e9a51150642b9cc81a8c62c9e9c530b
+  VialerSIPLib: 7e75da23bb90332701c4e46072109dd73d3cf04b
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+
+PODFILE CHECKSUM: 76ab25eb21312d74002ce36d1a968adc40209f98
+
+COCOAPODS: 1.5.3
