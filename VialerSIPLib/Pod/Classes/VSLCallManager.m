@@ -138,20 +138,29 @@
 }
 
 - (void)toggleMuteForCall:(VSLCall *)call completion:(void (^)(NSError *error))completion {
-    if (@available(iOS 10.0, *)) {
-        CXAction *toggleMuteAction = [[CXSetMutedCallAction alloc] initWithCallUUID:call.uuid muted:!call.muted];
-        [self requestCallKitAction:toggleMuteAction completion:completion];
+    NSError *muteError;
+    [call toggleMute:&muteError];
+    if (muteError) {
+        VSLLogError(@"Could not mute call. Error: %@", muteError);
+        VSLBlockSafeRun(completion,muteError);
     } else {
-        NSError *muteError;
-        [call toggleMute:&muteError];
-        if (muteError) {
-            VSLLogError(@"Could not mute call. Error: %@", muteError);
-            VSLBlockSafeRun(completion,muteError);
-        } else {
-            VSLLogInfo(@"\"Mute Call Transaction\" requested succesfully for Call(%@)", call.uuid.UUIDString);
-            VSLBlockSafeRun(completion,nil);
-        }
+        VSLLogInfo(@"\"Mute Call Transaction\" requested succesfully for Call(%@)", call.uuid.UUIDString);
+        VSLBlockSafeRun(completion,nil);
     }
+//    if (@available(iOS 10.0, *)) {
+//        CXAction *toggleMuteAction = [[CXSetMutedCallAction alloc] initWithCallUUID:call.uuid muted:!call.muted];
+//        [self requestCallKitAction:toggleMuteAction completion:completion];
+//    } else {
+//        NSError *muteError;
+//        [call toggleMute:&muteError];
+//        if (muteError) {
+//            VSLLogError(@"Could not mute call. Error: %@", muteError);
+//            VSLBlockSafeRun(completion,muteError);
+//        } else {
+//            VSLLogInfo(@"\"Mute Call Transaction\" requested succesfully for Call(%@)", call.uuid.UUIDString);
+//            VSLBlockSafeRun(completion,nil);
+//        }
+//    }
 }
 
 - (void)toggleHoldForCall:(VSLCall *)call completion:(void (^)(NSError * _Nullable))completion {
