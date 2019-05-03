@@ -105,7 +105,7 @@
 
 - (void)answerCall:(VSLCall *)call completion:(void (^)(NSError *error))completion {
     if (@available(iOS 10.0, *)) {
-        [call answerWithCompletion:completion];
+        [call answerWithVideoWithCompletion:completion];
     } else {
         [self.audioController configureAudioSession];
         [call answerWithCompletion:^(NSError * _Nullable error) {
