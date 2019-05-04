@@ -113,6 +113,8 @@ static NSString * const VSLAccountErrorDomain = @"VialerSIPLib.VSLAccount";
     acc_cfg.publish_enabled = accountConfiguration.sipPublishEnabled ? PJ_TRUE : PJ_FALSE;
     acc_cfg.reg_timeout = VSLAccountRegistrationTimeoutInSeconds;
     acc_cfg.drop_calls_on_reg_fail = accountConfiguration.dropCallOnRegistrationFailure ? PJ_TRUE : PJ_FALSE;
+    acc_cfg.vid_in_auto_show = PJ_TRUE;
+    acc_cfg.vid_out_auto_transmit = PJ_TRUE;
     
     // Add account information to the pjsua account configuration.
     acc_cfg.cred_count = 1;

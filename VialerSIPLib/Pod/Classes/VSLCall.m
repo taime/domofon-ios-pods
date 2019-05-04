@@ -523,25 +523,29 @@ NSString * const VSLCallErrorDuringSetupCallNotification = @"VSLCallErrorDuringS
     }
 }
 
-- (void) displayWindow: (UIView *) parent {
+- (void)displayWindow:(UIView *)parent {
     //#if PJSUA_HAS_VIDEO
     
     int vid_idx;
     pjsua_vid_win_id wid;
     
-    vid_idx = pjsua_call_get_vid_stream_idx(self.callId);
+    vid_idx = pjsua_call_get_vid_stream_idx((int)self.callId);
     if (vid_idx >= 0) {
         pjsua_call_info ci;
-        pjsua_call_get_info(self.callId, &ci);
+        pjsua_call_get_info((int)self.callId, &ci);
         wid = ci.media[vid_idx].stream.vid.win_in;
         
         pjsua_vid_win_info wi;
         if (pjsua_vid_win_get_info(wid, &wi) == PJ_SUCCESS) {
             UIView *view = (__bridge UIView *)wi.hwnd.info.ios.window;
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [parent addSubview:view];
-            });
+            if (view && ![view isDescendantOfView:parent]) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    /* Add the video window as subview */
+                    view.frame = CGRectMake(0.f, 0.f, parent.frame.size.width, parent.frame.size.height);
+                    view.contentMode = UIViewContentModeScaleAspectFill;
+                    [parent addSubview:view];
+                });
+            }
         }
     }
 }

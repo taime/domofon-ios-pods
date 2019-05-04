@@ -453,9 +453,9 @@ typedef NS_ENUM(NSInteger, VSLCallTerminateReason) {
  *  audio session is not activated.
  */
 - (void)answerWithCompletion:(void (^ _Nullable)(NSError * _Nullable error))completion;
-- (void)answerWithVideoWithCompletion:(void (^)(NSError *error))completion;
+- (void)answerWithVideoWithCompletion:(void (^ _Nullable)(NSError * _Nullable error))completion;
 - (BOOL)answer:(NSError * _Nullable * _Nullable)error __attribute__((unavailable("Deprecated, use VSLCallManager -answerCall: completion: instead")));
-- (void) displayWindow: (UIView *) parent;
+- (void) displayWindow: (UIView * _Nullable) parent;
 
 /**
  *  Toggle hold of the call.
