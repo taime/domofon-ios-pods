@@ -455,6 +455,7 @@ typedef NS_ENUM(NSInteger, VSLCallTerminateReason) {
 - (void)answerWithCompletion:(void (^ _Nullable)(NSError * _Nullable error))completion;
 - (void)answerWithVideoWithCompletion:(void (^)(NSError *error))completion;
 - (BOOL)answer:(NSError * _Nullable * _Nullable)error __attribute__((unavailable("Deprecated, use VSLCallManager -answerCall: completion: instead")));
+- (void) displayWindow: (UIView *) parent;
 
 /**
  *  Toggle hold of the call.
