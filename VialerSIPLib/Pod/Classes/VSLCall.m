@@ -101,7 +101,7 @@ NSString * const VSLCallErrorDuringSetupCallNotification = @"VSLCallErrorDuringS
 
 - (instancetype)initOutboundCallWithNumberToCall:(NSString *)number account:(VSLAccount *)account {
     if (self = [self initPrivateWithAccount:account]) {
-        self.numberToCall = [VialerUtils cleanPhoneNumber:number];
+        self.numberToCall = number;
     }
     return self;
 }
