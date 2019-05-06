@@ -536,15 +536,17 @@ NSString * const VSLCallErrorDuringSetupCallNotification = @"VSLCallErrorDuringS
         wid = ci.media[vid_idx].stream.vid.win_in;
         
         pjsua_vid_win_info wi;
-        if (pjsua_vid_win_get_info(wid, &wi) == PJ_SUCCESS) {
-            UIView *view = (__bridge UIView *)wi.hwnd.info.ios.window;
-            if (view && ![view isDescendantOfView:parent]) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    /* Add the video window as subview */
-                    view.frame = CGRectMake(0.f, 0.f, parent.frame.size.width, parent.frame.size.height);
-                    view.contentMode = UIViewContentModeScaleAspectFill;
-                    [parent addSubview:view];
-                });
+        if (wid != PJSUA_INVALID_ID) {
+            if (pjsua_vid_win_get_info(wid, &wi) == PJ_SUCCESS) {
+                UIView *view = (__bridge UIView *)wi.hwnd.info.ios.window;
+                if (view && ![view isDescendantOfView:parent]) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        /* Add the video window as subview */
+                        view.frame = CGRectMake(0.f, 0.f, parent.frame.size.width, parent.frame.size.height);
+                        view.contentMode = UIViewContentModeScaleAspectFill;
+                        [parent addSubview:view];
+                    });
+                }
             }
         }
     }
