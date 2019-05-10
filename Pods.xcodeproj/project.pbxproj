@@ -66,6 +66,7 @@
 		2371158CDC4274BC0BBED19EEDE86820 /* RACKVOProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E7672DA67A2977849B7B89C20DFBA74 /* RACKVOProxy.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		237BD5F2107A193D68CD8C78CDEB1B10 /* RACCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = 56972E484D857822AFD7CC32AADC7F53 /* RACCommand.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		24B9EE9189EF79A5D62FF97F094E6B91 /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A136467A6C377A3FCA8E28391E304A2 /* UIButton+AFNetworking.m */; };
+		255C9CF12285C49900C8E289 /* capp.png in Resources */ = {isa = PBXBuildFile; fileRef = 255C9CF02285C49900C8E289 /* capp.png */; };
 		26AE9E90B7021FAAD81063C19106D67D /* RACKVOProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 758593617877A911A7C8C32957F1910D /* RACKVOProxy.m */; };
 		26D96A4DBD59564782BB38A2ECA49BF3 /* IQKeyboardManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 45FBA25A996EB18C2FF9239B224C6A6B /* IQKeyboardManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		2745D94D3D62A80C722712CDA5ACC1FC /* RACMulticastConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B18F5D527B00E228B7C64C986B7379 /* RACMulticastConnection.m */; };
@@ -693,6 +694,7 @@
 		247328282C9488BE07128D397E574AFA /* SDWebImage-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SDWebImage-prefix.pch"; sourceTree = "<group>"; };
 		247E8582AD3D9844E8CB8AB8D2DBDFC1 /* pjnath.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = pjnath.h; path = VialerPJSIP.framework/Versions/A/Headers/pjnath.h; sourceTree = "<group>"; };
 		24C4B7F4DDD3FAB46B28529A15776CD0 /* SDWebImageCompat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageCompat.m; path = SDWebImage/SDWebImageCompat.m; sourceTree = "<group>"; };
+		255C9CF02285C49900C8E289 /* capp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = capp.png; path = Pod/Resources/capp.png; sourceTree = "<group>"; };
 		255CBD21C8568D6D02EB37096F653ECC /* NSString+RACSupport.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+RACSupport.m"; path = "ReactiveObjC/NSString+RACSupport.m"; sourceTree = "<group>"; };
 		25B70EF774F55BCD6E758F303F7C8888 /* NSInvocation+RACTypeParsing.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSInvocation+RACTypeParsing.h"; path = "ReactiveObjC/NSInvocation+RACTypeParsing.h"; sourceTree = "<group>"; };
 		25CAD3870E820D739105B4F5FEBD7ADC /* RACTuple.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RACTuple.m; path = ReactiveObjC/RACTuple.m; sourceTree = "<group>"; };
@@ -2269,6 +2271,7 @@
 		5BC9424345EA4B43CCF46256DBC1A184 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				255C9CF02285C49900C8E289 /* capp.png */,
 				4B0658E7667ADE695B7E5D1A73485108 /* disconnected.wav */,
 			);
 			name = Resources;
@@ -3493,6 +3496,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				691B4C0DDF22D305380661AF89041B1F /* disconnected.wav in Resources */,
+				255C9CF12285C49900C8E289 /* capp.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

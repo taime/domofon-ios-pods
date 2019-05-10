@@ -45,13 +45,21 @@ NSString * const CallKitProviderDelegateInboundCallRejectedNotification = @"Call
 
 - (CXProviderConfiguration *)providerConfiguration NS_AVAILABLE_IOS(10.0){
     if (@available(iOS 10.0, *)) {
-        NSString *appname = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleName"];
+//        NSString *appname = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleName"];
         CXProviderConfiguration *providerConfiguration = [[CXProviderConfiguration alloc]
-                                                          initWithLocalizedName:NSLocalizedString(appname, nil)];
+                                                          initWithLocalizedName:@"G77"];
         
-        providerConfiguration.maximumCallGroups = 2;
+        providerConfiguration.maximumCallGroups = 1;
         providerConfiguration.maximumCallsPerCallGroup = 1;
         providerConfiguration.supportsVideo = ![VSLEndpoint sharedEndpoint].endpointConfiguration.disableVideoSupport;
+        if (@available(iOS 11.0, *)) {
+            providerConfiguration.includesCallsInRecents = NO;
+        }
+        NSBundle *podBundle = [NSBundle bundleForClass:self.classForCoder];
+        NSBundle *vialerBundle = [NSBundle bundleWithURL:[podBundle URLForResource:@"VialerSIPLib" withExtension:@"bundle"]];
+        NSURL *appIconUrl = [vialerBundle URLForResource:@"capp" withExtension:@"png"];
+        UIImage* image = [UIImage imageWithContentsOfFile:appIconUrl.path];
+        providerConfiguration.iconTemplateImageData = UIImagePNGRepresentation(image);
         
         NSString *ringtoneFileName = [[NSBundle mainBundle] pathForResource:@"ringtone" ofType:@"wav"];
         if (ringtoneFileName) {
@@ -90,6 +98,8 @@ NSString * const CallKitProviderDelegateInboundCallRejectedNotification = @"Call
                 if (hangupError){
                     VSLLogError(@"Error hanging up call(%@) after CallKit error:%@", call.uuid.UUIDString, error);
                 }
+            } else {
+                NSLog(@"GOOD");
             }
         }];
     }
@@ -102,6 +112,7 @@ NSString * const CallKitProviderDelegateInboundCallRejectedNotification = @"Call
  */
 - (void)provider:(CXProvider *)provider performAnswerCallAction:(CXAnswerCallAction *)action NS_AVAILABLE_IOS(10.0) {
     __weak VSLCall *call = [self.callManager callWithUUID:action.callUUID];
+    NSLog(@"ANSWER MAZAFAKA");
     if (call) {
         [self.callManager.audioController configureAudioSession];
 
