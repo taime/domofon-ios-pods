@@ -51,7 +51,7 @@ NSString * const CallKitProviderDelegateInboundCallRejectedNotification = @"Call
         
         providerConfiguration.maximumCallGroups = 1;
         providerConfiguration.maximumCallsPerCallGroup = 1;
-        providerConfiguration.supportsVideo = ![VSLEndpoint sharedEndpoint].endpointConfiguration.disableVideoSupport;
+        providerConfiguration.supportsVideo = YES;
         if (@available(iOS 11.0, *)) {
             providerConfiguration.includesCallsInRecents = NO;
         }
@@ -112,15 +112,14 @@ NSString * const CallKitProviderDelegateInboundCallRejectedNotification = @"Call
  */
 - (void)provider:(CXProvider *)provider performAnswerCallAction:(CXAnswerCallAction *)action NS_AVAILABLE_IOS(10.0) {
     __weak VSLCall *call = [self.callManager callWithUUID:action.callUUID];
-    NSLog(@"ANSWER MAZAFAKA");
     if (call) {
         [self.callManager.audioController configureAudioSession];
 
-        [call answerWithCompletion:^(NSError *error) {
+        [call answerWithVideoWithCompletion:^(NSError * _Nullable error) {
             if (error) {
                 VSLLogError(@"Error answering call(%@) error:%@", call.uuid.UUIDString, error);
                 [action fail];
-
+                
             } else {
                 VSLLogVerbose(@"Answering call %@", call.uuid.UUIDString);
                 // Post a notification so the outbound call screen can be shown.

@@ -135,7 +135,6 @@
     if (@available(iOS 10.0, *)) {
         CXAction *endCallAction = [[CXEndCallAction alloc] initWithCallUUID:call.uuid];
         [self requestCallKitAction:endCallAction completion:completion];
-    } else {
         VSLLogVerbose(@"Ending call: %@", call.uuid.UUIDString);
         NSError *hangupError;
         [call hangup:&hangupError];
@@ -243,16 +242,12 @@
     if ([self.calls count] == 0) {
         return;
     }
-    
     for (VSLCall *call in self.calls) {
+        [self endCall:call completion:nil];
         VSLLogVerbose(@"Ending call: %@", call.uuid.UUIDString);
         NSError *hangupError;
         [call hangup:&hangupError];
-        if (hangupError) {
-            VSLLogError(@"Could not hangup call(%@). Error: %@", call.uuid.UUIDString, hangupError);
-        } else {
-            [self.audioController deactivateAudioSession];
-        }
+        [self.audioController deactivateAudioSession];
         [self removeCall:call];
     }
 }
