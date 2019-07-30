@@ -229,7 +229,7 @@ static force_inline NSDate *YYNSDateFromString(__unsafe_unretained NSString *str
             blocks[24] = ^(NSString *string) { return [formatter dateFromString:string]?:[formatter2 dateFromString:string]; };
             blocks[25] = ^(NSString *string) { return [formatter dateFromString:string];};
             blocks[28] = ^(NSString *string) { return [formatter2 dateFromString:string];};
-            blocks[29] = ^(NSString *string) { return [formatter2 dateFromString:string];};
+            blocks[29] = ^(NSString *string) {return [formatter4 dateFromString:string];};
             blocks[24] = ^(NSString* string) { return [formatter4 dateFromString:string];};
         }
         
