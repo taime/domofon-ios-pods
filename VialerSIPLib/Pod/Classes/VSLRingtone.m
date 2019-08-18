@@ -100,7 +100,7 @@ static NSUInteger const VialerSIPLibVibrateDuration = 1;
 
     // Set the audio session category. The category that is set repects the silent switch.
     NSError *setCategoryError;
-    BOOL setCategorySuccess = [audioSession setCategory:AVAudioSessionCategorySoloAmbient
+    BOOL setCategorySuccess = [audioSession setCategory:AVAudioSessionCategoryPlayback
                                                   error:&setCategoryError];
     if (!setCategorySuccess) {
         if (setCategoryError != NULL) {
