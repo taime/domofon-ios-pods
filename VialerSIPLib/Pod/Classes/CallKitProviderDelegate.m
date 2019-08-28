@@ -47,7 +47,7 @@ NSString * const CallKitProviderDelegateInboundCallRejectedNotification = @"Call
     if (@available(iOS 10.0, *)) {
 //        NSString *appname = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleName"];
         CXProviderConfiguration *providerConfiguration = [[CXProviderConfiguration alloc]
-                                                          initWithLocalizedName:@"G77"];
+                                                          initWithLocalizedName:@"SmartCity"];
         
         providerConfiguration.maximumCallGroups = 1;
         providerConfiguration.maximumCallsPerCallGroup = 1;
@@ -60,7 +60,6 @@ NSString * const CallKitProviderDelegateInboundCallRejectedNotification = @"Call
         NSURL *appIconUrl = [vialerBundle URLForResource:@"capp" withExtension:@"png"];
         UIImage* image = [UIImage imageWithContentsOfFile:appIconUrl.path];
         providerConfiguration.iconTemplateImageData = UIImagePNGRepresentation(image);
-        
         NSString *ringtoneFileName = [[NSBundle mainBundle] pathForResource:@"ringtone" ofType:@"wav"];
         if (ringtoneFileName) {
             providerConfiguration.ringtoneSound = @"ringtone.wav";

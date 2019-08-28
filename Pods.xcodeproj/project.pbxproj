@@ -90,6 +90,9 @@
 		22A0DF9DC9C40B39DDA68660B3982267 /* RACScopedDisposable.h in Headers */ = {isa = PBXBuildFile; fileRef = B22F38F38EC465C8A2530641AC3417FA /* RACScopedDisposable.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		22C5A9F51D0B3C6A30AB4F1230078334 /* NSObject+RACDeallocating.h in Headers */ = {isa = PBXBuildFile; fileRef = E4A650892B0C1AEB97BD50F2FC87E210 /* NSObject+RACDeallocating.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		24AD9ACA70FAFDFB2A252604FD9920A2 /* CallKitProviderDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 021D75988948E29B70AFA352C55A8345 /* CallKitProviderDelegate.m */; };
+		2526782D2316929E0011DDF2 /* capp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2526782A2316929E0011DDF2 /* capp@2x.png */; };
+		2526782E2316929E0011DDF2 /* capp@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2526782B2316929E0011DDF2 /* capp@3x.png */; };
+		2526782F2316929E0011DDF2 /* capp.png in Resources */ = {isa = PBXBuildFile; fileRef = 2526782C2316929E0011DDF2 /* capp.png */; };
 		25B8C4A89FB61A6D640D3E75DE49A27C /* UIImage+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 400E99D1BA724492309124197E02CE8A /* UIImage+AFNetworking.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		268CD91011C4719467572EE9C7E63199 /* IQKeyboardReturnKeyHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = BF729A7F27D2C19739C823F9C85F5C3D /* IQKeyboardReturnKeyHandler.m */; };
 		273F45C0BAB321F0141ED023956DCEFB /* VSLIceConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 822CA60E7494AFA91263B544BF04E4C8 /* VSLIceConfiguration.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -755,6 +758,9 @@
 		24A200A436F67FC0B6066A6AA7D0FA3A /* srv_resolver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = srv_resolver.h; path = "VialerPJSIP.framework/Versions/A/Headers/pjlib-util/srv_resolver.h"; sourceTree = "<group>"; };
 		24B74C2EBEE9C05643C8FC8DF4257FFF /* idea.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = idea.h; path = VialerPJSIP.framework/Versions/A/Headers/openssl/idea.h; sourceTree = "<group>"; };
 		24B8A88586E43F6CE31A142D130AFEB9 /* VSLStunConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VSLStunConfiguration.h; path = Pod/Classes/Configurations/VSLStunConfiguration.h; sourceTree = "<group>"; };
+		2526782A2316929E0011DDF2 /* capp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "capp@2x.png"; path = "Pod/Resources/capp@2x.png"; sourceTree = "<group>"; };
+		2526782B2316929E0011DDF2 /* capp@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "capp@3x.png"; path = "Pod/Resources/capp@3x.png"; sourceTree = "<group>"; };
+		2526782C2316929E0011DDF2 /* capp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = capp.png; path = Pod/Resources/capp.png; sourceTree = "<group>"; };
 		253E9EB5D361B32D27FB1D971610936F /* avi.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = avi.h; path = VialerPJSIP.framework/Versions/A/Headers/pjmedia/avi.h; sourceTree = "<group>"; };
 		25A3C134DCCCB446AA37745FD7C06A28 /* transport_srtp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = transport_srtp.h; path = VialerPJSIP.framework/Versions/A/Headers/pjmedia/transport_srtp.h; sourceTree = "<group>"; };
 		25BB0CFD16D4ADF7767ABF2324ACF535 /* cli_console.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = cli_console.h; path = "VialerPJSIP.framework/Versions/A/Headers/pjlib-util/cli_console.h"; sourceTree = "<group>"; };
@@ -2253,6 +2259,9 @@
 		916C3E25673FF07DB96EC00A37E4D92D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2526782C2316929E0011DDF2 /* capp.png */,
+				2526782A2316929E0011DDF2 /* capp@2x.png */,
+				2526782B2316929E0011DDF2 /* capp@3x.png */,
 				CC64AF2A80274395418CDB87A646E864 /* disconnected.wav */,
 			);
 			name = Resources;
@@ -3658,7 +3667,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2526782E2316929E0011DDF2 /* capp@3x.png in Resources */,
+				2526782D2316929E0011DDF2 /* capp@2x.png in Resources */,
 				D4EE271B888F8CF09BCB4944EDE4DD27 /* disconnected.wav in Resources */,
+				2526782F2316929E0011DDF2 /* capp.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
